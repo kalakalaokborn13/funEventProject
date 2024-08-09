@@ -1,1 +1,5 @@
-這裡沒東西
+每個人各自建立一個style.css檔案來放自己寫的樣式，取名就用styleByDustin.css這樣的形式
+
+經過參考了數個網站，發現所有網站都會把css、js、imgs(images)放在assets資料夾，或是放在類似的位置，總之不會是直接散在根目錄
+然後他們會為每個頁面建立資料夾來到那個頁面的html，例如把活動頁面放在activity資料夾下面且取名叫activity.html，
+關於我們頁面放在about資料夾裡面並取名叫about.html

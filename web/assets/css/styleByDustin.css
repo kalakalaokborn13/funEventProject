@@ -1,0 +1,310 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+:root {
+    /* 主色 */
+    --primary-1: #FF9D46;
+    --primary-2: #19B9AA;
+    /* 輔助色 */
+    --light: #FFFFFF;
+    /* 背景 */
+    --bg-line: #D7E1EC;
+    --bg-pri: #F7F9F9;
+    --bg-size: 44px;
+    /* 灰階 */
+    --gray-1: #595757;
+    --gray-2: #898989;
+}
+
+/* 重置所有標籤的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 不累加內距padding與邊框border */
+    box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*中文*/
+        "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    /* background-color: rgb(175, 207, 191); */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    /* 將預設inline改成block */
+    display: block;
+    text-decoration: none;
+    color: var(--deep);
+}
+
+/* 重置按鈕 */
+button {
+    border: none;
+    background-color: transparent;
+}
+
+/* 共用區 */
+.logo a {
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo img {
+    object-fit: cover;
+}
+
+.logo-en {
+    width: 152px;
+    height: 41px;
+    margin: 18px 14px 0 0;
+    overflow: hidden;
+}
+
+.logo-tc {
+    width: 168px;
+    height: 46px;
+    margin-bottom: 13px;
+    overflow: hidden;
+}
+
+.btn-round{
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-2);
+    border-radius: 99px;
+    padding: 8px 18px;
+    color: var(--light);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn-round__icon{
+    width: 24px;
+    height: 24px;
+    margin-right: 3px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 背景，之後可能換成圖片 */
+body {
+    background-image: conic-gradient(from 90deg at 2px 2px, var(--bg-pri) 90deg, var(--bg-line) 0);
+    background-size: var(--bg-size) var(--bg-size);
+    overflow-x: hidden;
+}
+
+/* 置頂導航列 topbar */
+#topbar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+.topbar__start-box {
+    display: flex;
+    align-items: center;
+}
+
+.topbar__start-box .logo {
+    margin: 30px 0 0 46px;
+}
+
+.topbar__location {
+    display: flex;
+    margin-left: 48px;
+}
+
+.topbar__map-pin-icon {
+    width: 29px;
+    height: 29px;
+}
+
+.topbar__location p {
+    font-size: 20px;
+    color: var(--light);
+}
+
+.topbar-menu {
+    display: flex;
+}
+
+.topbar-menu__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 17px 21px;
+    background-color: var(--primary-1);
+    border-radius: 0 0 30px 30px;
+    margin-right: 8.5px;
+}
+
+.topbar-menu__item:last-child {
+    margin-right: 20px;
+}
+
+.topbar-menu__icon {
+    width: 29px;
+    height: 29px;
+    margin-right: 7px;
+}
+
+.topbar-menu__item p {
+    color: var(--light);
+}
+
+/* 活動頁 */
+/* 活動頁背景 */
+.event-bg-color-block {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.event-bg-color-block__block1 {
+    width: 83vw;
+    height: 83vw;
+    position: absolute;
+    left: -25vw;
+    top: -35.8vw;
+    background-color: var(--primary-2);
+    border-radius: 9999px;
+}
+
+.event-bg-color-block__block2 {
+    background-image: url(../images/event-bg-color-block2.svg);
+    background-size: cover;
+    width: 54.2vw;
+    height: 38.9vw;
+    position: absolute;
+    right: -11.6vw;
+    top: 12.8vw;
+}
+
+/* 活動頁-活動主頁 */
+#event-intro {
+    padding: 140px 45px 0 65px;
+}
+
+.breadcrumb {
+    display: flex;
+    margin-left: 4.5px;
+    margin-bottom: 34px;
+    color: var(--light);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.breadcrumb .divider {
+    white-space-collapse: preserve;
+}
+
+.event-intro-box {
+    display: flex;
+}
+
+.event-intro-carousel figure {
+    width: 821px;
+    height: 514px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.event-intro-carousel-subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 23px;
+    padding-left: 8px;
+}
+
+.event-intro-carousel__ctrl-box {
+    display: flex;
+    align-items: center;
+}
+
+.event-intro-carousel__ctrl-box .arrow {
+    background-image: url(../images/event-carousel-arrow.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-right: 34px;
+}
+
+.event-intro-carousel__ctrl-box .ctrl-btn-box{
+    display: flex;
+    align-items: center;
+    margin-right: 34px;
+}
+
+.event-intro-carousel__ctrl-box .ctrl-btn{
+    width: 17px;
+    height: 17px;
+    background-color: var(--gray-2);
+    border-radius: 99px;
+    margin-right: 14px;
+}
+
+.event-intro-carousel__ctrl-box .ctrl-btn.ctrl-btn--active{
+    background-color: var(--gray-1);
+}
+
+.event-intro-carousel__ctrl-box .ctrl-btn:last-child{
+    margin-right: 0;
+}
+
+.event-intro-carousel__ctrl-box .arrow--next{
+    transform: rotate(180deg);
+}
+
+.event-intro-carousel-subtitle .btn-box{
+    display: flex;
+}
+
+.event-intro-carousel-subtitle .btn-round:first-child{
+    margin-right: 3px;
+}
+
+.event-intro-carousel-subtitle .add-fav-icon--faved{
+    background-image: url(../images/add-fav-icon--faved.svg);
+}
+
+.event-intro-carousel-subtitle .share-icon{
+    background-image: url(../images/share-icon.svg);
+}
+
+

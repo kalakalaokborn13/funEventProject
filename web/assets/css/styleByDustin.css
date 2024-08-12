@@ -333,3 +333,13 @@ body {
     padding: 32px 27px;
 }
 
+.event-intro-card__content .item .icon {
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-size: contain;
+}
+
+.event-intro-card__content .item-date .icon {
+    background-image: url(../images/date-icon.svg);
+}

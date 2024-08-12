@@ -96,7 +96,7 @@ button {
     overflow: hidden;
 }
 
-.btn-round{
+.btn-round {
     display: flex;
     align-items: center;
     background-color: var(--primary-2);
@@ -107,13 +107,19 @@ button {
     font-weight: 500;
 }
 
-.btn-round__icon{
+.btn-round__icon {
     width: 24px;
     height: 24px;
     margin-right: 3px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+/* 陰影1 */
+.event-intro-carousel figure,
+.event-intro-content {
+    box-shadow: 0 0 4.1px 1px rgba(0, 0, 0, 0.5);
 }
 
 /* 背景，之後可能換成圖片 */
@@ -184,10 +190,12 @@ body {
 }
 
 /* 活動頁 */
+
+
 /* 活動頁背景 */
 .event-bg-color-block {
     position: absolute;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -215,7 +223,14 @@ body {
 
 /* 活動頁-活動主頁 */
 #event-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 140px 45px 0 65px;
+}
+
+.event-intro-wrapper {
+    max-width: 1330px;
 }
 
 .breadcrumb {
@@ -265,13 +280,13 @@ body {
     margin-right: 34px;
 }
 
-.event-intro-carousel__ctrl-box .ctrl-btn-box{
+.event-intro-carousel__ctrl-box .ctrl-btn-box {
     display: flex;
     align-items: center;
     margin-right: 34px;
 }
 
-.event-intro-carousel__ctrl-box .ctrl-btn{
+.event-intro-carousel__ctrl-box .ctrl-btn {
     width: 17px;
     height: 17px;
     background-color: var(--gray-2);
@@ -279,32 +294,42 @@ body {
     margin-right: 14px;
 }
 
-.event-intro-carousel__ctrl-box .ctrl-btn.ctrl-btn--active{
+.event-intro-carousel__ctrl-box .ctrl-btn.ctrl-btn--active {
     background-color: var(--gray-1);
 }
 
-.event-intro-carousel__ctrl-box .ctrl-btn:last-child{
+.event-intro-carousel__ctrl-box .ctrl-btn:last-child {
     margin-right: 0;
 }
 
-.event-intro-carousel__ctrl-box .arrow--next{
+.event-intro-carousel__ctrl-box .arrow--next {
     transform: rotate(180deg);
 }
 
-.event-intro-carousel-subtitle .btn-box{
+.event-intro-carousel-subtitle .btn-box {
     display: flex;
 }
 
-.event-intro-carousel-subtitle .btn-round:first-child{
+.event-intro-carousel-subtitle .btn-round:first-child {
     margin-right: 3px;
 }
 
-.event-intro-carousel-subtitle .add-fav-icon--faved{
+.event-intro-carousel-subtitle .add-fav-icon--faved {
     background-image: url(../images/add-fav-icon--faved.svg);
 }
 
-.event-intro-carousel-subtitle .share-icon{
+.event-intro-carousel-subtitle .share-icon {
     background-image: url(../images/share-icon.svg);
 }
 
+.event-intro-content {
+    /* for test */
+    width: 475px;
+    height: 514px;
+    /* for test */
+    background-color: var(--light);
+    border-radius: 10px;
+    margin-left: 34px;
+    padding: 32px 27px;
+}
 

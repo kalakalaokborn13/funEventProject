@@ -6,12 +6,13 @@
     --primary-1: #FF9D46;
     --primary-2: #19B9AA;
     /* 輔助色 */
-    --light: #FFFFFF;
+    --secondary-1: #FFC08C;
     /* 背景 */
     --bg-line: #D7E1EC;
     --bg-pri: #F7F9F9;
     --bg-size: 44px;
     /* 灰階 */
+    --light: #FFFFFF;
     --deep: #000000;
     --gray-1: #595757;
     --gray-2: #898989;
@@ -514,6 +515,7 @@ body {
     /* 占滿整個column(row-line從auto延伸七條line) */
     grid-row: auto / span 7;
     width: 475px;
+    height: 730px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -528,18 +530,98 @@ body {
 }
 
 #event-plan-form .label-big,
-#event-plan-form .title{
+#event-plan-form .title,
+#event-plan-form .price-box .currency,
+#event-plan-form .fun-point-box .fun-point {
     font-size: 20px;
+    font-weight: 500;
     color: var(--gray-1);
 }
 
-#event-plan-form .ticket-type .minus-btn{
+#event-plan-form select {
+    position: relative;
+    font-size: 16px;
+    color: var(--gray-1);
+    padding: 13px 19px;
+    border: solid 2px var(--secondary-1);
+    border-radius: 10px;
+}
+
+#event-plan-form select::placeholder {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#event-plan-form .radio-box input {
+    /* display: none; */
+}
+
+#event-plan-form .radio-box label {
+    font-size: 16px;
+    color: var(--gray-1);
+    padding: 13px 35px;
+    border: solid 2px var(--secondary-1);
+    border-radius: 10px;
+}
+
+#event-plan-form .ticket-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#event-plan-form .ticket-type .title-box,
+#event-plan-form .ticket-type .amount-box {
+    display: flex;
+    align-items: flex-end;
+}
+
+#event-plan-form .ticket-type .title-box .subtitle {
+    font-size: 16px;
+    color: var(--gray-2);
+    line-height: 1.6;
+}
+
+#event-plan-form .ticket-type .minus-btn {
     width: 24px;
     height: 24px;
     background: url(../images/minus-icon.svg) center/cover no-repeat;
 }
-#event-plan-form .ticket-type .plus-btn{
+
+#event-plan-form .ticket-type .plus-btn {
     width: 24px;
     height: 24px;
     background: url(../images/plus-icon.svg) center/cover no-repeat;
+}
+
+#event-plan-form .price-box,
+#event-plan-form .fun-point-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#event-plan-form .price-box .currency {
+    /* font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-1); */
+}
+
+#event-plan-form .price-box .price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-2);
+}
+
+#event-plan-form .price-inner-box,
+#event-plan-form .fun-point-inner-box {
+    display: flex;
+    align-items: flex-end;
+}
+
+#event-plan-form .fun-point-icon {
+    width: 30px;
+    height: 30px;
+    background: url(../images/fun-point-icon.svg) center/cover no-repeat;
 }

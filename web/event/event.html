@@ -154,12 +154,16 @@
                         <form action="" id="event-plan-form">
                             <label for="plan" class="label-big">選擇方案</label>
                             <select name="plan" id="plan">
+                                <option value="">請選擇方案</option>
                                 <option value="親子一同彈">親子一同彈</option>
                                 <option value="孩子獨奏">孩子獨奏</option>
                             </select>
 
                             <label for="date" class="label-big">選擇日期</label>
-                            <input type="date" name="date" id="date">
+                            <select name="date" id="date">
+                                <option value="">請選擇日期</option>
+                                <option value="2024-10-06">2024-10-06</option>
+                            </select>
 
                             <p class="label-big">選擇時段</p>
                             <div class="radio-box">
@@ -172,18 +176,26 @@
                             <p class="label-big">數量</p>
                             <ul class="ticket-type-list">
                                 <li class="ticket-type">
-                                    <p class="title">成人</p>
-                                    <p class="subtitle">(12-99歲)</p>
-                                    <button class="minus-btn"></button>
-                                    <p class="amount">1</p>
-                                    <button class="plus-btn"></button>
+                                    <div class="title-box">
+                                        <p class="title">成人</p>
+                                        <p class="subtitle">(12-99歲)</p>
+                                    </div>
+                                    <div class="amount-box">
+                                        <button class="minus-btn"></button>
+                                        <p class="amount">1</p>
+                                        <button class="plus-btn"></button>
+                                    </div>
                                 </li>
                                 <li class="ticket-type">
-                                    <p class="title">兒童</p>
-                                    <p class="subtitle">(4-11歲)</p>
-                                    <button class="minus-btn"></button>
-                                    <p class="amount">1</p>
-                                    <button class="plus-btn"></button>
+                                    <div class="title-box">
+                                        <p class="title">兒童</p>
+                                        <p class="subtitle">(4-11歲)</p>
+                                    </div>
+                                    <div class="amount-box">
+                                        <button class="minus-btn"></button>
+                                        <p class="amount">1</p>
+                                        <button class="plus-btn"></button>
+                                    </div>
                                 </li>
                             </ul>
                             <div class="split-line-row"></div>
@@ -196,7 +208,7 @@
                             </div>
                             <div class="fun-point-box">
                                 <p class="title">Fun點數</p>
-                                <div class="price-inner-box">
+                                <div class="fun-point-inner-box">
                                     <p class="fun-point">6</p>
                                     <div class="fun-point-icon"></div>
                                 </div>

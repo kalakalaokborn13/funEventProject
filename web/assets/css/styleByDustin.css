@@ -77,6 +77,15 @@ button {
     background-color: transparent;
 }
 
+/* 重置select */
+select {
+    outline: none;
+}
+
+label{
+    display: block;
+}
+
 /* 共用區 */
 .logo a {
     display: flex;
@@ -101,7 +110,7 @@ button {
     overflow: hidden;
 }
 
-.btn-round {
+.funevent-btn-round {
     display: flex;
     align-items: center;
     background-color: var(--primary-2);
@@ -112,13 +121,23 @@ button {
     font-weight: 500;
 }
 
-.btn-round__icon {
+.funevent-btn-round__icon {
     width: 24px;
     height: 24px;
     margin-right: 3px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.funevent-btn{
+    background-color: var(--primary-2);
+    padding: 6px 19px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--light);
+    border-radius: 10px;
+    line-height: 2;
 }
 
 .tag {
@@ -349,7 +368,7 @@ body {
     display: flex;
 }
 
-.event-intro-carousel-subtitle .btn-round:first-child {
+.event-intro-carousel-subtitle .funevent-btn-round:first-child {
     margin-right: 3px;
 }
 
@@ -525,7 +544,8 @@ body {
 }
 
 #event-plan-form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     row-gap: 20px;
 }
 
@@ -539,7 +559,6 @@ body {
 }
 
 #event-plan-form select {
-    position: relative;
     font-size: 16px;
     color: var(--gray-1);
     padding: 13px 19px;
@@ -547,10 +566,8 @@ body {
     border-radius: 10px;
 }
 
-#event-plan-form select::placeholder {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+#event-plan-form .radio-box{
+    display: flex;
 }
 
 #event-plan-form .radio-box label {
@@ -567,16 +584,31 @@ body {
     align-items: center;
 }
 
-#event-plan-form .ticket-type .title-box,
-#event-plan-form .ticket-type .amount-box {
+#event-plan-form .ticket-type .title-box {
     display: flex;
     align-items: flex-end;
+}
+
+#event-plan-form .ticket-type .title-box .title {
+    margin-right: 12px;
 }
 
 #event-plan-form .ticket-type .title-box .subtitle {
     font-size: 16px;
     color: var(--gray-2);
     line-height: 1.6;
+}
+
+#event-plan-form .ticket-type .amount-box {
+    display: flex;
+    align-items: center;
+}
+
+#event-plan-form .ticket-type .amount {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 25px;
+    margin-bottom: 3px;
 }
 
 #event-plan-form .ticket-type .minus-btn {
@@ -602,6 +634,8 @@ body {
     font-size: 32px;
     font-weight: 700;
     color: var(--primary-2);
+    margin-left: 26px;
+    line-height: 1.2;
 }
 
 #event-plan-form .price-inner-box,
@@ -614,4 +648,5 @@ body {
     width: 30px;
     height: 30px;
     background: url(../images/fun-point-icon.svg) center/cover no-repeat;
+    margin-left: 9px;
 }

@@ -553,10 +553,6 @@ body {
     transform: translateY(-50%);
 }
 
-#event-plan-form .radio-box input {
-    /* display: none; */
-}
-
 #event-plan-form .radio-box label {
     font-size: 16px;
     color: var(--gray-1);
@@ -600,12 +596,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-#event-plan-form .price-box .currency {
-    /* font-size: 20px;
-    font-weight: 500;
-    color: var(--gray-1); */
 }
 
 #event-plan-form .price-box .price {

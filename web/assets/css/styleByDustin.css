@@ -120,7 +120,7 @@ button {
     background-repeat: no-repeat;
 }
 
-.tag{
+.tag {
     padding: 5px 10px;
     background-color: var(--tag-1);
     color: var(--light);
@@ -129,7 +129,7 @@ button {
     font-weight: 400;
 }
 
-.split-line-row{
+.split-line-row {
     height: 1px;
     width: 100%;
     background-color: var(--gray-3);
@@ -137,7 +137,8 @@ button {
 
 /* 陰影1 */
 .event-intro-carousel figure,
-.event-intro-card {
+.event-intro-card,
+.event-plan-board {
     box-shadow: 0 0 4.1px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -241,15 +242,15 @@ body {
 }
 
 /* 活動頁-活動主頁 */
-#event-intro {
+#event-introduction {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 140px 45px 0 65px;
 }
 
-.event-intro-wrapper {
-    max-width: 1330px;
+.event-introduction-wrapper {
+    max-width: 1600px;
 }
 
 .breadcrumb {
@@ -261,27 +262,44 @@ body {
     font-weight: 500;
 }
 
+.breadcrumb a {
+    color: var(--light);
+}
+
 .breadcrumb .divider {
     white-space-collapse: preserve;
 }
 
-.event-intro-box {
-    display: flex;
-    align-items: flex-start;
+/* 網格系統，包全部主要內容 */
+.event-introduction-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 25px;
+    column-gap: 34px;
+}
+
+/* 活動頁-大輪播 */
+.event-intro-carousel .slide-box {
+    height: 100%;
 }
 
 .event-intro-carousel figure {
-    width: 821px;
-    height: 514px;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     overflow: hidden;
+}
+
+.event-intro-carousel figure img {
+    height: 100%;
+    object-fit: cover;
 }
 
 .event-intro-carousel-subtitle {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 23px;
     padding-left: 8px;
 }
 
@@ -342,27 +360,31 @@ body {
     background-image: url(../images/share-icon.svg);
 }
 
+/* 活動頁-活動介紹卡 */
 .event-intro-card {
+    width: 475px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--light);
     border-radius: 10px;
-    margin-left: 34px;
     padding: 32px 27px;
 }
 
-.event-intro-card__title{
+.event-intro-card__title {
     font-size: 36px;
     font-weight: 500;
     color: var(--gray-1);
     margin-bottom: 20px;
 }
 
-.event-intro-card__ranking-box{
+.event-intro-card__ranking-box {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.event-intro-card .ranking-icon{
+.event-intro-card .ranking-icon {
     width: 20px;
     height: 20px;
     background-image: url(../images/star-icon.svg);
@@ -373,7 +395,7 @@ body {
 .event-intro-card__content {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-row-gap: 20px
+    row-gap: 20px;
 }
 
 .event-intro-card__content .item-title-box {
@@ -389,7 +411,7 @@ body {
     margin-right: 10px;
 }
 
-.event-intro-card__content .item-title-box .title{
+.event-intro-card__content .item-title-box .title {
     flex: 1;
     display: flex;
     justify-content: space-between;
@@ -397,44 +419,44 @@ body {
     font-weight: 500;
 }
 
-.event-intro-card__content .item-content-box{
+.event-intro-card__content .item-content-box {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
 }
 
-.event-intro-card__content .item-content-box .open-map-box{
+.event-intro-card__content .item-content-box .open-map-box {
     display: flex;
     align-items: center;
 }
 
 .event-intro-card__content .add-calendar,
-.event-intro-card__content .open-link-icon{
+.event-intro-card__content .open-link-icon {
     margin-left: 10px;
 }
 
-.event-intro-card__content .item-content-box .open-map{
+.event-intro-card__content .item-content-box .open-map {
     margin-left: 3px;
 }
 
 .event-intro-card__content .open-link-icon,
-.event-intro-card__content .item-content-box .open-map-box{
+.event-intro-card__content .item-content-box .open-map-box {
     align-self: center;
 }
 
 .event-intro-card__content .text,
-.event-intro-card__ranking-box .ranking-text{
+.event-intro-card__ranking-box .ranking-text {
     font-size: 20px;
     color: var(--deep);
 }
 
-.event-intro-card__content .sub-text{
+.event-intro-card__content .sub-text {
     font-size: 16px;
     color: var(--gray-2);
 }
 
 .event-intro-card__content .add-calendar,
-.event-intro-card__content .open-map{
+.event-intro-card__content .open-map {
     font-size: 12px;
     font-weight: 500;
     color: var(--primary-1);
@@ -448,15 +470,15 @@ body {
     background-image: url(../images/address-icon.svg);
 }
 
-.event-intro-card__content .item-founder .icon{
+.event-intro-card__content .item-founder .icon {
     background-image: url(../images/chest-icon.svg);
 }
 
-.event-intro-card__content .item-link .icon{
+.event-intro-card__content .item-link .icon {
     background-image: url(../images/chest-icon.svg);
 }
 
-.event-intro-card__content .open-link-icon{
+.event-intro-card__content .open-link-icon {
     width: 14px;
     height: 14px;
     background-image: url(../images/open-link-icon.svg);
@@ -466,23 +488,58 @@ body {
     margin: 20px 0;
 }
 
-.event-intro-card .tag-box{
+.event-intro-card .tag-box {
     display: flex;
     align-items: center;
 }
 
-.event-intro-card .tag-box .tag-icon{
+.event-intro-card .tag-box .tag-icon {
     width: 24px;
     height: 24px;
     background: url(../images/tag-icon.svg) center/cover;
     margin-right: 6px;
 }
 
-.event-intro-card .tag-box .tag-list{
+.event-intro-card .tag-box .tag-list {
     display: flex;
     align-items: center;
 }
 
-.event-intro-card .tag-box .tag-list .tag{
+.event-intro-card .tag-box .tag-list .tag {
     margin-right: 6px;
+}
+
+/* 活動頁-方案漂浮板面 */
+.event-plan-board {
+    /* 占滿整個column(row-line從auto延伸七條line) */
+    grid-row: auto / span 7;
+    width: 475px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 35px;
+}
+
+#event-plan-form {
+    display: grid;
+    row-gap: 20px;
+}
+
+#event-plan-form .label-big,
+#event-plan-form .title{
+    font-size: 20px;
+    color: var(--gray-1);
+}
+
+#event-plan-form .ticket-type .minus-btn{
+    width: 24px;
+    height: 24px;
+    background: url(../images/minus-icon.svg) center/cover no-repeat;
+}
+#event-plan-form .ticket-type .plus-btn{
+    width: 24px;
+    height: 24px;
+    background: url(../images/plus-icon.svg) center/cover no-repeat;
 }

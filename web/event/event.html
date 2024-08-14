@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- 導航列 -->
     <header id="topbar">
         <div class="topbar__start-box">
             <h1 class="logo">
@@ -49,14 +50,16 @@
         </div>
 
     </header>
+    <!-- 色塊背景 -->
     <div class="event-bg-color-block">
         <div class="event-bg-color-block__block1"></div>
         <div class="event-bg-color-block__block2"></div>
     </div>
 
     <main>
-        <section id="event-introduction">
+        <div id="event-introduction">
             <div class="event-introduction-wrapper">
+                <!-- 麵包屑 -->
                 <div class="breadcrumb">
                     <a href="../index.html">首頁</a>
                     <span class="divider"> / </span>
@@ -64,13 +67,16 @@
                     <span class="divider"> / </span>
                     <a href="#">室內活動</a>
                 </div>
+                <!-- 所有活動內容容器(grid) -->
                 <div class="event-introduction-container">
+                    <!-- 活動圖片輪播 -->
                     <div class="event-intro-carousel">
                         <div class="slide-box">
                             <figure class="slide1"><img src="../assets/images/event1-pic01.png" alt=""></figure>
                         </div>
                     </div>
-                    <div class="event-intro-card">
+                    <!-- 活動介紹卡 -->
+                    <section class="event-intro-card">
                         <header>
                             <h1 class="event-intro-card__title">流行音樂與民謠吉他-第一堂吉他課的首選</h1>
                         </header>
@@ -126,8 +132,9 @@
                                 <li class="tag">#流行音樂</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="event-intro-carousel-subtitle">
+                    </section>
+                    <!-- 輪播控制組與蒐藏轉發按鈕 -->
+                    <section class="event-intro-carousel-subtitle">
                         <div class="event-intro-carousel__ctrl-box">
                             <button type="button" class="arrow arrow--prev"></button>
                             <div class="ctrl-btn-box">
@@ -149,8 +156,9 @@
                                 <p>轉發</p>
                             </button>
                         </div>
-                    </div>
-                    <div class="event-plan-board">
+                    </section>
+                    <!-- 活動方案懸浮板 -->
+                    <section class="event-plan-board">
                         <form action="" id="event-plan-form">
                             <label for="plan" class="label-big">選擇方案</label>
                             <select name="plan" id="plan">
@@ -215,11 +223,59 @@
                             </div>
                             <button class="funevent-btn" id="sign-up-btn">立即報名</button>
                         </form>
+                    </section>
+                    <div class="event-main-introduction-container">
+                        <!-- 活動頁內部導航列 -->
+                        <nav class="event-inner-nav">
+                            <ul class="menu">
+                                <li class="item">
+                                    <button class="event-inner-nav__btn is-enhanced" type="button">活動主頁</button>
+                                </li>
+                                <li class="item">
+                                    <button class="event-inner-nav__btn" type="button">活動介紹</button>
+                                </li>
+                                <li class="item">
+                                    <button class="event-inner-nav__btn" type="button">選擇方案</button>
+                                </li>
+                                <li class="item">
+                                    <button class="event-inner-nav__btn" type="button">注意事項</button>
+                                </li>
+                                <li class="item">
+                                    <button class="event-inner-nav__btn" type="button">主辦單位</button>
+                                </li>
+                                <li class="item">
+                                    <button class="event-inner-nav__btn" type="button">活動評論</button>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- 活動介紹區塊 -->
+                        <section id="event-main-introduction">
+                            <h2 class="funevent-main-title">活動介紹</h2>
+                            <p class="text-content">
+                                民謠吉他，是近幾十年來最流行的樂器之一，具有便宜好學且方便攜帶的特性，是孩子們探索音樂、創造音樂最好的一條途徑。想讓孩子們接觸音樂，但又怕孩子們三分鐘熱度無法堅持太久，趕緊趁現在來參加我們的吉他體驗課吧！
+                                <br><br>
+                                不用小提琴或國樂器的昂貴價格，也不用鋼琴的超大佔位，一把吉他，揹著就可以到處彈到處唱，
+                                同時，您在課程中也可以和孩子們一同學習，創造屬於親子間的特別回憶。
+                                <br><br>
+                                專屬FunEvent會員優惠！蘭響當天會帶著數款適合初學者的木吉他讓同學們可以當場選購。
+                                憑電子票卷證明亦可到蘭響音樂教室用折扣價購買精選木吉他。
+                            </p>
+                            <h2 class="funevent-main-title">師資介紹</h2>
+                            <p class="text-content">
+                                蘭響音樂教室的師資都是已從業多年的音樂教師，大多老師也同時是樂團樂手或是音樂製作人。蘭響音樂教室一定會給您帶來最佳的活動體驗。
+                            </p>
+                            <h2 class="funevent-main-title">活動流程</h2>
+                            <p class="text-content">
+                                民謠吉他的特色 => 經典四和弦 => 簡單樂理 => 彈唱練習
+                            </p>
+                            <button type="button" class="funevent-btn">觀看更多內容</button>
+                        </section>
                     </div>
+
                 </div>
             </div>
 
-        </section>
+        </div>
     </main>
 </body>
 

@@ -17,6 +17,7 @@
     --gray-1: #595757;
     --gray-2: #898989;
     --gray-3: #D9D9D9;
+    --gray-4: #B5B5B6;
     /* 特殊色 */
     --tag-1: #FFBF61;
 }
@@ -82,11 +83,12 @@ select {
     outline: none;
 }
 
-label{
+label {
     display: block;
 }
 
 /* 共用區 */
+/* 左上logo */
 .logo a {
     display: flex;
     align-items: flex-start;
@@ -110,6 +112,32 @@ label{
     overflow: hidden;
 }
 
+/* 主要大標題 */
+.funevent-main-title {
+    display: flex;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-1);
+}
+
+.funevent-main-title::before {
+    content: "";
+    display: block;
+    width: 38.95px;
+    height: 28.25px;
+    background-image: url(../images/funevent-main-title-color-block.svg);
+    margin-right: 4px;
+}
+
+.funevent-main-title::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    background: url(../images/funevent-main-title-dotted-line.svg) center repeat-x;
+    margin-left: 15px;
+}
+
+/* 圓角99按鈕 */
 .funevent-btn-round {
     display: flex;
     align-items: center;
@@ -130,7 +158,7 @@ label{
     background-repeat: no-repeat;
 }
 
-.funevent-btn{
+.funevent-btn {
     background-color: var(--primary-2);
     padding: 6px 19px;
     font-size: 16px;
@@ -140,6 +168,7 @@ label{
     line-height: 2;
 }
 
+/* tag */
 .tag {
     padding: 5px 10px;
     background-color: var(--tag-1);
@@ -149,6 +178,7 @@ label{
     font-weight: 400;
 }
 
+/* row分隔線 */
 .split-line-row {
     height: 1px;
     width: 100%;
@@ -158,7 +188,8 @@ label{
 /* 陰影1 */
 .event-intro-carousel figure,
 .event-intro-card,
-.event-plan-board {
+.event-plan-board,
+#event-main-introduction {
     box-shadow: 0 0 4.1px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -566,7 +597,7 @@ body {
     border-radius: 10px;
 }
 
-#event-plan-form .radio-box{
+#event-plan-form .radio-box {
     display: flex;
 }
 
@@ -649,4 +680,56 @@ body {
     height: 30px;
     background: url(../images/fun-point-icon.svg) center/cover no-repeat;
     margin-left: 9px;
+}
+
+/* 活動頁-內部導航列 */
+.event-inner-nav .menu {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 0.6px;
+}
+
+.event-inner-nav .item {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.event-inner-nav__btn {
+    width: 100%;
+    height: 100%;
+    padding: 14px 9px;
+    background-color: var(--gray-4);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.event-inner-nav__btn.is-enhanced {
+    background-color: var(--primary-1);
+}
+
+/* 活動頁-活動介紹 */
+#event-main-introduction {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    padding: 34px 42px;
+    background-color: var(--light);
+    border-radius: 0 0 10px 10px;
+}
+
+#event-main-introduction .text-content{
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--gray-1);
+    margin-bottom: 23px;
+}
+
+#event-main-introduction .funevent-btn{
+    width: 50%;
+    background-color: var(--tag-1);
+    align-self: center;
 }

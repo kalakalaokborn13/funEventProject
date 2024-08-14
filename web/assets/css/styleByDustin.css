@@ -18,6 +18,7 @@
     --gray-2: #898989;
     --gray-3: #D9D9D9;
     --gray-4: #B5B5B6;
+    --gray-5: #727171;
     /* 特殊色 */
     --tag-1: #FFBF61;
 }
@@ -112,7 +113,7 @@ label {
     overflow: hidden;
 }
 
-/* 主要大標題 */
+/* 主要大標題，使用h2標籤 */
 .funevent-main-title {
     display: flex;
     font-size: 32px;
@@ -166,7 +167,7 @@ label {
     font-weight: 400;
     color: var(--light);
     border-radius: 10px;
-    line-height: 2;
+    /* line-height: 2; */
 }
 
 /* tag */
@@ -190,7 +191,12 @@ label {
 .event-intro-carousel figure,
 .event-intro-card,
 .event-plan-board,
-#event-main-introduction {
+#event-main-introduction,
+#event-page-plan-intro,
+#event-page-notice,
+#event-page-comment,
+#event-page-plan-intro .plan-item,
+#event-page-founder {
     box-shadow: 0 0 4.1px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -261,7 +267,32 @@ body {
     color: var(--light);
 }
 
-/* 活動頁 */
+/* 活動頁共用區 */
+/* 活動頁主要區塊共用樣式 */
+#event-page-plan-intro,
+#event-page-notice,
+#event-page-founder,
+#event-page-comment {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    padding: 34px 42px;
+    background-color: var(--light);
+    border-radius: 10px;
+}
+
+/* 蒐藏轉發按鈕 */
+.add-fav-icon {
+    background-image: url(../images/add-fav-icon.svg);
+}
+
+.add-fav-icon.add-fav-icon--faved {
+    background-image: url(../images/add-fav-icon--faved.svg);
+}
+
+.share-icon {
+    background-image: url(../images/share-icon.svg);
+}
 
 
 /* 活動頁背景 */
@@ -402,14 +433,6 @@ body {
 
 .event-intro-carousel-subtitle .funevent-btn-round:first-child {
     margin-right: 3px;
-}
-
-.event-intro-carousel-subtitle .add-fav-icon--faved {
-    background-image: url(../images/add-fav-icon--faved.svg);
-}
-
-.event-intro-carousel-subtitle .share-icon {
-    background-image: url(../images/share-icon.svg);
 }
 
 /* 活動頁-活動介紹卡 */
@@ -683,6 +706,10 @@ body {
     margin-left: 9px;
 }
 
+#event-plan-form .funevent-btn {
+    height: 46px;
+}
+
 /* 活動頁-內部導航列 */
 .event-inner-nav .menu {
     display: flex;
@@ -722,15 +749,131 @@ body {
     border-radius: 0 0 10px 10px;
 }
 
-#event-main-introduction .text-content{
+#event-main-introduction .text-content {
     font-size: 20px;
     line-height: 1.5;
     color: var(--gray-1);
     margin-bottom: 23px;
 }
 
-#event-main-introduction .funevent-btn{
+#event-main-introduction .funevent-btn {
     width: 50%;
     background-color: var(--tag-1);
     align-self: center;
+}
+
+/* 活動頁-選擇方案 */
+#event-page-plan-intro .plan-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+
+#event-page-plan-intro .plan-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--light);
+    border-radius: 20px;
+    padding: 25px 31px;
+}
+
+#event-page-plan-intro .plan-item .start-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+    color: var(--gray-1);
+}
+
+#event-page-plan-intro .plan-item .title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#event-page-plan-intro .plan-item .subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#event-page-plan-intro .plan-item .end-box {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+#event-page-plan-intro .plan-item .funevent-btn {
+    align-self: center;
+    width: 106px;
+    height: 48px;
+}
+
+#event-page-plan-intro .plan-item .price-box {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+}
+
+#event-page-plan-intro .plan-item .currency {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-2);
+}
+
+#event-page-plan-intro .plan-item .price {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--gray-5);
+}
+
+/* 活動頁-注意事項 */
+#event-page-notice .text-content {
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--gray-1);
+}
+
+/* 活動頁-主辦單位 */
+#event-page-founder .founder-intro-box{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 14px;
+}
+
+#event-page-founder .start-box{
+    display: flex;
+    column-gap: 14px;
+    flex-shrink: 1;
+}
+
+#event-page-founder .founder-intro{
+    max-width: 375px;
+}
+
+#event-page-founder .founder-intro-box .founder-icon{
+    background: url(../images/event01/founder-icon.svg) center/cover no-repeat;
+    width: 63px;
+    height: 63px;
+}
+
+#event-page-founder .founder-intro-box .title{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-1);
+}
+
+#event-page-founder .founder-intro-box .intro{
+    font-size: 16px;
+    color: var(--gray-1);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+}
+
+#event-page-founder .btn-box{
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+    min-width: 257px;
 }

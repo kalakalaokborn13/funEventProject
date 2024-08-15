@@ -6,16 +6,21 @@
     --primary-1: #FF9D46;
     --primary-2: #19B9AA;
     /* 輔助色 */
-    --light: #FFFFFF;
+    --secondary-1: #FFC08C;
     /* 背景 */
     --bg-line: #D7E1EC;
     --bg-pri: #F7F9F9;
     --bg-size: 44px;
     /* 灰階 */
+    --light: #FFFFFF;
     --deep: #000000;
     --gray-1: #595757;
     --gray-2: #898989;
     --gray-3: #D9D9D9;
+    --gray-4: #B5B5B6;
+    --gray-5: #727171;
+    --gray-6: #A8A8A8;
+    --gray-7: #3E3A39;
     /* 特殊色 */
     --tag-1: #FFBF61;
 }
@@ -76,7 +81,17 @@ button {
     background-color: transparent;
 }
 
+/* 重置select */
+select {
+    outline: none;
+}
+
+label {
+    display: block;
+}
+
 /* 共用區 */
+/* 左上logo */
 .logo a {
     display: flex;
     align-items: flex-start;
@@ -100,7 +115,33 @@ button {
     overflow: hidden;
 }
 
-.btn-round {
+/* 主要大標題，使用h2標籤 */
+.funevent-main-title {
+    display: flex;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-1);
+}
+
+.funevent-main-title::before {
+    content: "";
+    display: block;
+    width: 38.95px;
+    height: 28.25px;
+    background-image: url(../images/funevent-main-title-color-block.svg);
+    margin-right: 4px;
+}
+
+.funevent-main-title::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    background: url(../images/funevent-main-title-dotted-line.svg) center repeat-x;
+    margin-left: 15px;
+}
+
+/* 圓角99按鈕 */
+.funevent-btn-round {
     display: flex;
     align-items: center;
     background-color: var(--primary-2);
@@ -111,7 +152,7 @@ button {
     font-weight: 500;
 }
 
-.btn-round__icon {
+.funevent-btn-round__icon {
     width: 24px;
     height: 24px;
     margin-right: 3px;
@@ -120,7 +161,19 @@ button {
     background-repeat: no-repeat;
 }
 
-.tag{
+/* 圓角10按鈕 */
+.funevent-btn {
+    background-color: var(--primary-2);
+    padding: 6px 19px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--light);
+    border-radius: 10px;
+    /* line-height: 2; */
+}
+
+/* tag */
+.tag {
     padding: 5px 10px;
     background-color: var(--tag-1);
     color: var(--light);
@@ -129,7 +182,21 @@ button {
     font-weight: 400;
 }
 
-.split-line-row{
+/* 評分圖案 */
+.rating-icon {
+    background-image: url(../images/rating-icon.svg);
+    background-position: center;
+    background-size: cover;
+}
+
+.rating-icon.rating-icon--filled {
+    background-image: url(../images/rating-icon--filled.svg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* row分隔線 */
+.split-line-row {
     height: 1px;
     width: 100%;
     background-color: var(--gray-3);
@@ -137,7 +204,14 @@ button {
 
 /* 陰影1 */
 .event-intro-carousel figure,
-.event-intro-card {
+.event-intro-card,
+.event-plan-board,
+#event-main-introduction,
+#event-page-plan-intro,
+#event-page-notice,
+#event-page-comment,
+#event-page-plan-intro .plan-item,
+#event-page-founder {
     box-shadow: 0 0 4.1px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -208,7 +282,32 @@ body {
     color: var(--light);
 }
 
-/* 活動頁 */
+/* 活動頁共用區 */
+/* 活動頁主要區塊共用樣式 */
+#event-page-plan-intro,
+#event-page-notice,
+#event-page-founder,
+#event-page-comment {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    padding: 34px 42px;
+    background-color: var(--light);
+    border-radius: 10px;
+}
+
+/* 蒐藏轉發按鈕 */
+.add-fav-icon {
+    background-image: url(../images/add-fav-icon.svg);
+}
+
+.add-fav-icon.add-fav-icon--faved {
+    background-image: url(../images/add-fav-icon--faved.svg);
+}
+
+.share-icon {
+    background-image: url(../images/share-icon.svg);
+}
 
 
 /* 活動頁背景 */
@@ -241,15 +340,15 @@ body {
 }
 
 /* 活動頁-活動主頁 */
-#event-intro {
+#event-introduction {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 140px 45px 0 65px;
 }
 
-.event-intro-wrapper {
-    max-width: 1330px;
+.event-introduction-wrapper {
+    max-width: 1400px;
 }
 
 .breadcrumb {
@@ -261,27 +360,44 @@ body {
     font-weight: 500;
 }
 
+.breadcrumb a {
+    color: var(--light);
+}
+
 .breadcrumb .divider {
     white-space-collapse: preserve;
 }
 
-.event-intro-box {
-    display: flex;
-    align-items: flex-start;
+/* 網格系統，包全部主要內容 */
+.event-introduction-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 25px;
+    column-gap: 34px;
+}
+
+/* 活動頁-大輪播 */
+.event-intro-carousel .slide-box {
+    height: 100%;
 }
 
 .event-intro-carousel figure {
-    width: 821px;
-    height: 514px;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     overflow: hidden;
+}
+
+.event-intro-carousel figure img {
+    height: 100%;
+    object-fit: cover;
 }
 
 .event-intro-carousel-subtitle {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 23px;
     padding-left: 8px;
 }
 
@@ -330,50 +446,43 @@ body {
     display: flex;
 }
 
-.event-intro-carousel-subtitle .btn-round:first-child {
+.event-intro-carousel-subtitle .funevent-btn-round:first-child {
     margin-right: 3px;
 }
 
-.event-intro-carousel-subtitle .add-fav-icon--faved {
-    background-image: url(../images/add-fav-icon--faved.svg);
-}
-
-.event-intro-carousel-subtitle .share-icon {
-    background-image: url(../images/share-icon.svg);
-}
-
+/* 活動頁-活動介紹卡 */
 .event-intro-card {
+    width: 475px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--light);
     border-radius: 10px;
-    margin-left: 34px;
     padding: 32px 27px;
 }
 
-.event-intro-card__title{
+.event-intro-card__title {
     font-size: 36px;
     font-weight: 500;
     color: var(--gray-1);
     margin-bottom: 20px;
 }
 
-.event-intro-card__ranking-box{
+.event-intro-card__rating-box {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.event-intro-card .ranking-icon{
+.event-intro-card .rating-icon {
     width: 20px;
     height: 20px;
-    background-image: url(../images/star-icon.svg);
-    background-position: center;
-    background-size: cover;
 }
 
 .event-intro-card__content {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-row-gap: 20px
+    row-gap: 20px;
 }
 
 .event-intro-card__content .item-title-box {
@@ -389,7 +498,7 @@ body {
     margin-right: 10px;
 }
 
-.event-intro-card__content .item-title-box .title{
+.event-intro-card__content .item-title-box .title {
     flex: 1;
     display: flex;
     justify-content: space-between;
@@ -397,44 +506,44 @@ body {
     font-weight: 500;
 }
 
-.event-intro-card__content .item-content-box{
+.event-intro-card__content .item-content-box {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
 }
 
-.event-intro-card__content .item-content-box .open-map-box{
+.event-intro-card__content .item-content-box .open-map-box {
     display: flex;
     align-items: center;
 }
 
 .event-intro-card__content .add-calendar,
-.event-intro-card__content .open-link-icon{
+.event-intro-card__content .open-link-icon {
     margin-left: 10px;
 }
 
-.event-intro-card__content .item-content-box .open-map{
+.event-intro-card__content .item-content-box .open-map {
     margin-left: 3px;
 }
 
 .event-intro-card__content .open-link-icon,
-.event-intro-card__content .item-content-box .open-map-box{
+.event-intro-card__content .item-content-box .open-map-box {
     align-self: center;
 }
 
 .event-intro-card__content .text,
-.event-intro-card__ranking-box .ranking-text{
+.event-intro-card__rating-box .rating-text {
     font-size: 20px;
     color: var(--deep);
 }
 
-.event-intro-card__content .sub-text{
+.event-intro-card__content .sub-text {
     font-size: 16px;
     color: var(--gray-2);
 }
 
 .event-intro-card__content .add-calendar,
-.event-intro-card__content .open-map{
+.event-intro-card__content .open-map {
     font-size: 12px;
     font-weight: 500;
     color: var(--primary-1);
@@ -448,15 +557,15 @@ body {
     background-image: url(../images/address-icon.svg);
 }
 
-.event-intro-card__content .item-founder .icon{
+.event-intro-card__content .item-founder .icon {
     background-image: url(../images/chest-icon.svg);
 }
 
-.event-intro-card__content .item-link .icon{
+.event-intro-card__content .item-link .icon {
     background-image: url(../images/chest-icon.svg);
 }
 
-.event-intro-card__content .open-link-icon{
+.event-intro-card__content .open-link-icon {
     width: 14px;
     height: 14px;
     background-image: url(../images/open-link-icon.svg);
@@ -466,23 +575,486 @@ body {
     margin: 20px 0;
 }
 
-.event-intro-card .tag-box{
+.event-intro-card .tag-box {
     display: flex;
     align-items: center;
 }
 
-.event-intro-card .tag-box .tag-icon{
+.event-intro-card .tag-box .tag-icon {
     width: 24px;
     height: 24px;
     background: url(../images/tag-icon.svg) center/cover;
     margin-right: 6px;
 }
 
-.event-intro-card .tag-box .tag-list{
+.event-intro-card .tag-box .tag-list {
     display: flex;
     align-items: center;
 }
 
-.event-intro-card .tag-box .tag-list .tag{
+.event-intro-card .tag-box .tag-list .tag {
     margin-right: 6px;
+}
+
+/* 活動頁-方案漂浮板面 */
+.event-plan-board {
+    /* 占滿整個column(row-line從auto延伸七條line) */
+    grid-row: auto / span 7;
+    width: 475px;
+    height: 730px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 35px;
+}
+
+#event-plan-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+#event-plan-form .label-big,
+#event-plan-form .title,
+#event-plan-form .price-box .currency,
+#event-plan-form .fun-point-box .fun-point {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-1);
+}
+
+#event-plan-form select {
+    font-size: 16px;
+    color: var(--gray-1);
+    padding: 13px 19px;
+    border: solid 2px var(--secondary-1);
+    border-radius: 10px;
+}
+
+#event-plan-form .radio-box {
+    display: flex;
+}
+
+#event-plan-form .radio-box label {
+    font-size: 16px;
+    color: var(--gray-1);
+    padding: 13px 35px;
+    border: solid 2px var(--secondary-1);
+    border-radius: 10px;
+}
+
+#event-plan-form .ticket-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#event-plan-form .ticket-type .title-box {
+    display: flex;
+    align-items: flex-end;
+}
+
+#event-plan-form .ticket-type .title-box .title {
+    margin-right: 12px;
+}
+
+#event-plan-form .ticket-type .title-box .subtitle {
+    font-size: 16px;
+    color: var(--gray-2);
+    line-height: 1.6;
+}
+
+#event-plan-form .ticket-type .amount-box {
+    display: flex;
+    align-items: center;
+}
+
+#event-plan-form .ticket-type .amount {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 25px;
+    margin-bottom: 3px;
+}
+
+#event-plan-form .ticket-type .minus-btn {
+    width: 24px;
+    height: 24px;
+    background: url(../images/minus-icon.svg) center/cover no-repeat;
+}
+
+#event-plan-form .ticket-type .plus-btn {
+    width: 24px;
+    height: 24px;
+    background: url(../images/plus-icon.svg) center/cover no-repeat;
+}
+
+#event-plan-form .price-box,
+#event-plan-form .fun-point-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#event-plan-form .price-box .price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-2);
+    margin-left: 26px;
+    line-height: 1.2;
+}
+
+#event-plan-form .price-inner-box,
+#event-plan-form .fun-point-inner-box {
+    display: flex;
+    align-items: flex-end;
+}
+
+#event-plan-form .fun-point-icon {
+    width: 30px;
+    height: 30px;
+    background: url(../images/fun-point-icon.svg) center/cover no-repeat;
+    margin-left: 9px;
+}
+
+#event-plan-form .funevent-btn {
+    height: 46px;
+}
+
+/* 活動頁-內部導航列 */
+.event-inner-nav .menu {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 0.6px;
+}
+
+.event-inner-nav .item {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.event-inner-nav__btn {
+    width: 100%;
+    height: 100%;
+    padding: 14px 9px;
+    background-color: var(--gray-4);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.event-inner-nav__btn.is-enhanced {
+    background-color: var(--primary-1);
+}
+
+/* 活動頁-活動介紹 */
+#event-main-introduction {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    padding: 34px 42px;
+    background-color: var(--light);
+    border-radius: 0 0 10px 10px;
+}
+
+#event-main-introduction .text-content {
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--gray-1);
+    margin-bottom: 23px;
+}
+
+#event-main-introduction .funevent-btn {
+    width: 50%;
+    background-color: var(--tag-1);
+    align-self: center;
+}
+
+/* 活動頁-選擇方案 */
+#event-page-plan-intro .plan-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+
+#event-page-plan-intro .plan-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--light);
+    border-radius: 20px;
+    padding: 25px 31px;
+}
+
+#event-page-plan-intro .plan-item .start-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+    color: var(--gray-1);
+}
+
+#event-page-plan-intro .plan-item .title {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#event-page-plan-intro .plan-item .subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#event-page-plan-intro .plan-item .end-box {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+#event-page-plan-intro .plan-item .funevent-btn {
+    align-self: center;
+    width: 106px;
+    height: 48px;
+}
+
+#event-page-plan-intro .plan-item .price-box {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+}
+
+#event-page-plan-intro .plan-item .currency {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-2);
+}
+
+#event-page-plan-intro .plan-item .price {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--gray-5);
+}
+
+/* 活動頁-注意事項 */
+#event-page-notice .text-content {
+    font-size: 20px;
+    line-height: 1.8;
+    color: var(--gray-1);
+}
+
+/* 活動頁-主辦單位 */
+#event-page-founder .founder-intro-box {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 14px;
+}
+
+#event-page-founder .start-box {
+    display: flex;
+    column-gap: 14px;
+    flex-shrink: 1;
+}
+
+#event-page-founder .founder-intro {
+    max-width: 375px;
+}
+
+#event-page-founder .founder-intro-box .founder-icon {
+    background: url(../images/event01/founder-icon.svg) center/cover no-repeat;
+    width: 63px;
+    height: 63px;
+}
+
+#event-page-founder .founder-intro-box .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-1);
+}
+
+#event-page-founder .founder-intro-box .intro {
+    font-size: 16px;
+    color: var(--gray-1);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+}
+
+#event-page-founder .btn-box {
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+    min-width: 257px;
+}
+
+/* 活動頁-活動評論 */
+#event-page-comment .comment-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+}
+
+#event-page-comment .comment-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+#event-page-comment .rating-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#event-page-comment .rating-point {
+    font-size: 96px;
+    font-weight: 900;
+    color: var(--primary-1);
+}
+
+#event-page-comment .total-rating-point {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--gray-2);
+}
+
+#event-page-comment .rating-box .rating-point-box {
+    display: flex;
+    align-items: flex-end;
+    line-height: 1;
+}
+
+#event-page-comment .rating-box .rating-icon-box {
+    display: flex;
+    column-gap: 13px;
+}
+
+#event-page-comment .rating-box .rating-icon-box .rating-icon {
+    width: 53px;
+    height: 53px;
+}
+
+#event-page-comment .total-comment-box {
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--gray-6);
+}
+
+#event-page-comment .filter{
+    align-self: flex-end;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-5);
+    border: none;
+    appearance: none;
+    background: url(../images/arrow-down-gray.svg) right/cover no-repeat;
+    background-size: 16px 16px;
+    /* 留空間給自製箭頭 */
+    padding-right: 26px;
+}
+
+#event-page-comment .user-avatar {
+    width: 86px;
+    height: 86px;
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+
+#event-page-comment .comment-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin-right: 22px;
+}
+
+#event-page-comment .comment-content .start-box {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 14px;
+}
+
+#event-page-comment .comment-content .user-name {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-7);
+}
+
+#event-page-comment .comment-content .date {
+    font-size: 14px;
+    color: var(--gray-2);
+}
+
+#event-page-comment .comment-content .rating-icon-box {
+    display: flex;
+    column-gap: 6px;
+}
+
+#event-page-comment .comment-content .rating-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#event-page-comment .comment-content .text-content-box {
+    display: flex;
+    flex-direction: column;
+}
+
+#event-page-comment .comment-content .text-content {
+    font-size: 16px;
+    color: var(--gray-5);
+    line-height: 1.45;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+#event-page-comment .comment-content .more-btn {
+    display: flex;
+    align-self: flex-end;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-2);
+    margin-top: 8px;
+}
+
+#event-page-comment .comment-content .more-btn::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-left: 7px;
+    background: url(../images/arrow-down.svg) center/cover no-repeat;
+}
+
+#event-page-comment .comment-item .comment-pic {
+    position: relative;
+    width: 149px;
+    height: 104px;
+    flex-shrink: 0;
+    align-self: flex-end;
+}
+
+#event-page-comment .comment-item .comment-pic .more-pic-btn{
+    position: absolute;
+    font-size: 14px;
+    right: 0;
+    bottom: 0;
+    width: 23%;
+    height: 26%;
+    background-color: var(--deep);
+    color: var(--light);
+    border-radius: 5px 5px 10px 5px;
+}
+
+#event-page-comment .funevent-btn{
+    width: 50%;
+    background-color: var(--tag-1);
+    margin-top: 12px;
+    align-self: center;
 }

@@ -20,6 +20,7 @@
     --gray-4: #B5B5B6;
     --gray-5: #727171;
     --gray-6: #A8A8A8;
+    --gray-7: #3E3A39;
     /* 特殊色 */
     --tag-1: #FFBF61;
 }
@@ -182,13 +183,13 @@ label {
 }
 
 /* 評分圖案 */
-.rating-icon{
+.rating-icon {
     background-image: url(../images/rating-icon.svg);
     background-position: center;
     background-size: cover;
 }
 
-.rating-icon.rating-icon--filled{
+.rating-icon.rating-icon--filled {
     background-image: url(../images/rating-icon--filled.svg);
     background-position: center;
     background-size: cover;
@@ -347,7 +348,7 @@ body {
 }
 
 .event-introduction-wrapper {
-    max-width: 1600px;
+    max-width: 1400px;
 }
 
 .breadcrumb {
@@ -843,35 +844,35 @@ body {
 }
 
 /* 活動頁-主辦單位 */
-#event-page-founder .founder-intro-box{
+#event-page-founder .founder-intro-box {
     display: flex;
     justify-content: space-between;
     column-gap: 14px;
 }
 
-#event-page-founder .start-box{
+#event-page-founder .start-box {
     display: flex;
     column-gap: 14px;
     flex-shrink: 1;
 }
 
-#event-page-founder .founder-intro{
+#event-page-founder .founder-intro {
     max-width: 375px;
 }
 
-#event-page-founder .founder-intro-box .founder-icon{
+#event-page-founder .founder-intro-box .founder-icon {
     background: url(../images/event01/founder-icon.svg) center/cover no-repeat;
     width: 63px;
     height: 63px;
 }
 
-#event-page-founder .founder-intro-box .title{
+#event-page-founder .founder-intro-box .title {
     font-size: 20px;
     font-weight: 500;
     color: var(--gray-1);
 }
 
-#event-page-founder .founder-intro-box .intro{
+#event-page-founder .founder-intro-box .intro {
     font-size: 16px;
     color: var(--gray-1);
     text-overflow: ellipsis;
@@ -882,7 +883,7 @@ body {
     line-clamp: 1;
 }
 
-#event-page-founder .btn-box{
+#event-page-founder .btn-box {
     display: flex;
     align-items: center;
     column-gap: 11px;
@@ -890,7 +891,18 @@ body {
 }
 
 /* 活動頁-活動評論 */
-#event-page-comment .rating-box{
+#event-page-comment .comment-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+}
+
+#event-page-comment .comment-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+#event-page-comment .rating-box {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -902,31 +914,147 @@ body {
     color: var(--primary-1);
 }
 
-#event-page-comment .total-rating-point{
+#event-page-comment .total-rating-point {
     font-size: 36px;
     font-weight: 900;
     color: var(--gray-2);
 }
 
-#event-page-comment .rating-box .rating-point-box{
+#event-page-comment .rating-box .rating-point-box {
     display: flex;
     align-items: flex-end;
     line-height: 1;
 }
 
-#event-page-comment .rating-box .rating-icon-box{
+#event-page-comment .rating-box .rating-icon-box {
     display: flex;
     column-gap: 13px;
 }
 
-#event-page-comment .rating-box .rating-icon-box .rating-icon{
+#event-page-comment .rating-box .rating-icon-box .rating-icon {
     width: 53px;
     height: 53px;
 }
 
-#event-page-comment .total-comment-box{
+#event-page-comment .total-comment-box {
     display: flex;
     font-size: 16px;
     font-weight: 500;
     color: var(--gray-6);
+}
+
+#event-page-comment .filter{
+    align-self: flex-end;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-5);
+    border: none;
+    appearance: none;
+    background: url(../images/arrow-down-gray.svg) right/cover no-repeat;
+    background-size: 16px 16px;
+    /* 留空間給自製箭頭 */
+    padding-right: 26px;
+}
+
+#event-page-comment .user-avatar {
+    width: 86px;
+    height: 86px;
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+
+#event-page-comment .comment-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin-right: 22px;
+}
+
+#event-page-comment .comment-content .start-box {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 14px;
+}
+
+#event-page-comment .comment-content .user-name {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gray-7);
+}
+
+#event-page-comment .comment-content .date {
+    font-size: 14px;
+    color: var(--gray-2);
+}
+
+#event-page-comment .comment-content .rating-icon-box {
+    display: flex;
+    column-gap: 6px;
+}
+
+#event-page-comment .comment-content .rating-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#event-page-comment .comment-content .text-content-box {
+    display: flex;
+    flex-direction: column;
+}
+
+#event-page-comment .comment-content .text-content {
+    font-size: 16px;
+    color: var(--gray-5);
+    line-height: 1.45;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+#event-page-comment .comment-content .more-btn {
+    display: flex;
+    align-self: flex-end;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-2);
+    margin-top: 8px;
+}
+
+#event-page-comment .comment-content .more-btn::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-left: 7px;
+    background: url(../images/arrow-down.svg) center/cover no-repeat;
+}
+
+#event-page-comment .comment-item .comment-pic {
+    position: relative;
+    width: 149px;
+    height: 104px;
+    flex-shrink: 0;
+    align-self: flex-end;
+}
+
+#event-page-comment .comment-item .comment-pic .more-pic-btn{
+    position: absolute;
+    font-size: 14px;
+    right: 0;
+    bottom: 0;
+    width: 23%;
+    height: 26%;
+    background-color: var(--deep);
+    color: var(--light);
+    border-radius: 5px 5px 10px 5px;
+}
+
+#event-page-comment .funevent-btn{
+    width: 50%;
+    background-color: var(--tag-1);
+    margin-top: 12px;
+    align-self: center;
 }

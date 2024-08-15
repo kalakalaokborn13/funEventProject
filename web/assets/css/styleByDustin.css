@@ -84,6 +84,11 @@ button {
 /* 重置select */
 select {
     outline: none;
+    font: inherit;
+}
+
+option {
+    font: inherit;
 }
 
 label {
@@ -138,6 +143,108 @@ label {
     flex-grow: 1;
     background: url(../images/funevent-main-title-dotted-line.svg) center repeat-x;
     margin-left: 15px;
+}
+
+/* 活動卡片 */
+.funevent-event-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+    padding: 17px 14px;
+    width: 304px;
+    height: 425px;
+    background-color: var(--light);
+    border-radius: 10px;
+}
+
+.funevent-event-card .event-pic {
+    width: 276px;
+    height: 194px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    background: center/cover no-repeat;
+}
+
+.funevent-event-card .inner-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.funevent-event-card .inner-card .start-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 11px 0 11px;
+}
+
+.funevent-event-card .inner-card .fav-btn {
+    width: 19px;
+    height: 19px;
+    background: url(../images/add-fav-icon.svg) center/cover no-repeat;
+}
+
+.funevent-event-card .category {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--tag-1);
+}
+
+.funevent-event-card .event-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    color: var(--gray-5);
+}
+
+.funevent-event-card .location {
+    display: flex;
+}
+
+.funevent-event-card .tag-rating-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.funevent-event-card .tag-list {
+    display: flex;
+    column-gap: 6px;
+}
+
+.funevent-event-card .tag {
+    font-size: 12px;
+    line-height: 1;
+}
+
+.funevent-event-card .date{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray-1);
+    background-color: var(--light);
+    border-radius: 10px 0 0 0;
+    padding: 5px 15px 0 15px;
+    align-self: flex-end;
+}
+
+.funevent-event-card .rating-score {
+    font-size: 14px;
+    color: var(--deep);
+    display: flex;
+    align-items: center;
+}
+
+.funevent-event-card .rating-score::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    background: url(../images/rating-icon--filled.svg) center/cover no-repeat;
+}
+
+.funevent-event-card .sign-up-btn {
+    height: 41px;
 }
 
 /* 圓角99按鈕 */
@@ -211,7 +318,8 @@ label {
 #event-page-notice,
 #event-page-comment,
 #event-page-plan-intro .plan-item,
-#event-page-founder {
+#event-page-founder,
+.funevent-event-card {
     box-shadow: 0 0 4.1px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -226,11 +334,12 @@ body {
 #topbar {
     display: flex;
     justify-content: space-between;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
 }
 
 .topbar__start-box {
+    position: absolute;
     display: flex;
     align-items: center;
 }
@@ -252,6 +361,11 @@ body {
 .topbar__location p {
     font-size: 20px;
     color: var(--light);
+}
+
+.topbar__end-box {
+    position: fixed;
+    right: 0;
 }
 
 .topbar-menu {
@@ -348,7 +462,7 @@ body {
 }
 
 .event-introduction-wrapper {
-    max-width: 1400px;
+    max-width: 1300px;
 }
 
 .breadcrumb {
@@ -904,8 +1018,9 @@ body {
 
 #event-page-comment .rating-box {
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
+    align-self: center;
+    column-gap: 50px;
 }
 
 #event-page-comment .rating-point {
@@ -943,7 +1058,11 @@ body {
     color: var(--gray-6);
 }
 
-#event-page-comment .filter{
+#event-page-comment .total-comment-box p {
+    white-space: nowrap;
+}
+
+#event-page-comment .filter {
     align-self: flex-end;
     font-size: 20px;
     font-weight: 500;
@@ -1040,7 +1159,7 @@ body {
     align-self: flex-end;
 }
 
-#event-page-comment .comment-item .comment-pic .more-pic-btn{
+#event-page-comment .comment-item .comment-pic .more-pic-btn {
     position: absolute;
     font-size: 14px;
     right: 0;
@@ -1052,7 +1171,7 @@ body {
     border-radius: 5px 5px 10px 5px;
 }
 
-#event-page-comment .funevent-btn{
+#event-page-comment .funevent-btn {
     width: 50%;
     background-color: var(--tag-1);
     margin-top: 12px;

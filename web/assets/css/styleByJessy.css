@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+/* 重置所有標籤的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 不累加內距padding與邊框border */
+    box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*中文*/
+        "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    /* background-color: rgb(175, 207, 191); */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    /* 將預設inline改成block */
+    display: block;
+    text-decoration: none;
+    color: var(--deep);
+}
+
+/* 重置按鈕 */
+button {
+    border: none;
+    background-color: transparent;
+}
+
+footer {
+    padding: 0 144px;
+    background-color: #595757;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 1034px;
+}
+
+footer .navigation .menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+footer .navigation .app-box p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: white;
+    margin-bottom: 4px;
+}
+
+footer .navigation .download {
+    display: flex;
+    column-gap: 13px;
+}
+
+footer .navigation .google {
+    width: 142px;
+    height: 49px;
+    background-image: url(../images/google-play-icon.svg);
+}
+
+footer .navigation .iphone {
+    width: 146px;
+    height: 49px;
+    background-image: url(../images/apple-store-icon.svg);
+}
+
+/* footer div {
+    display: flex;
+    justify-content: space-between;
+} */
+
+footer .navigation .menu {
+    margin: 0;
+    padding: 0;
+}
+
+footer .navigation .menu h3 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: white;
+}
+
+footer .navigation .menu a {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+}
+
+footer .navigation .menu li {
+    border: none;
+    margin: 10px 0;
+}
+
+.split-line-row{
+    background-color: white;
+    height: 0.5px;
+    width: 100%;
+    margin-top: 17px;
+    margin-bottom: 14px;
+}
+
+footer .end-box {
+    display: flex;
+    justify-content: space-between;
+    width: 1034px;
+    margin-bottom: 47px;
+}
+
+footer .end-box .icon-box {
+    display: flex;
+    column-gap: 10px;
+}
+
+footer .end-box .icon {
+    width: 36px;
+    height: 36px;
+}
+
+footer .end-box small {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 34px;
+}

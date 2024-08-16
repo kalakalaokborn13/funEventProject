@@ -303,6 +303,10 @@ button {
     background-repeat: no-repeat;
 }
 
+.funevent-btn-round p {
+    white-space: nowrap;
+}
+
 /* 圓角10按鈕 */
 .funevent-btn {
     background-color: var(--primary-2);
@@ -311,6 +315,7 @@ button {
     font-weight: 400;
     color: var(--light);
     border-radius: 10px;
+    white-space: nowrap;
     /* line-height: 2; */
 }
 
@@ -497,6 +502,7 @@ body {
 }
 
 .event-introduction-wrapper {
+    width: 100%;
     max-width: 1300px;
 }
 
@@ -521,7 +527,8 @@ body {
 .event-introduction-container {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr auto;
+    /* grid-template-columns: 1fr auto; */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 475px);
     row-gap: 25px;
     column-gap: 34px;
 }
@@ -601,7 +608,7 @@ body {
 
 /* 活動頁-活動介紹卡 */
 .event-intro-card {
-    width: 475px;
+    /* width: 475px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -749,7 +756,7 @@ body {
 .event-plan-board {
     /* 占滿整個column(row-line從auto延伸七條line) */
     grid-row: auto / span 7;
-    width: 475px;
+    /* width: 475px; */
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -1029,6 +1036,7 @@ body {
     background: url(../images/event01/founder-icon.svg) center/cover no-repeat;
     width: 63px;
     height: 63px;
+    flex-shrink: 0;
 }
 
 #event-page-founder .founder-intro-box .title {
@@ -1052,7 +1060,7 @@ body {
     display: flex;
     align-items: center;
     column-gap: 11px;
-    min-width: 257px;
+    /* min-width: 257px; */
 }
 
 /* 活動頁-活動評論 */
@@ -1070,8 +1078,10 @@ body {
 #event-page-comment .rating-box {
     display: flex;
     align-items: flex-end;
-    align-self: center;
-    column-gap: 50px;
+    /* align-self: center; */
+    /* column-gap: 50px; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 #event-page-comment .rating-point {

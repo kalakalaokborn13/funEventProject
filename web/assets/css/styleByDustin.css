@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&display=swap');
 
+/* 此css目前有用在event.html */
 :root {
     /* 主色 */
     --primary-1: #FF9D46;
@@ -21,8 +22,10 @@
     --gray-5: #727171;
     --gray-6: #A8A8A8;
     --gray-7: #3E3A39;
+    --gray-8: #8A8A8A;
     /* 特殊色 */
     --tag-1: #FFBF61;
+    --tag-2: #FF8282;
 }
 
 /* 重置所有標籤的樣式 */
@@ -95,6 +98,11 @@ label {
     display: block;
 }
 
+/* 按鈕手 */
+button {
+    cursor: pointer;
+}
+
 /* 共用區 */
 /* 左上logo */
 .logo a {
@@ -160,7 +168,7 @@ label {
 .funevent-event-card .event-pic {
     width: 276px;
     height: 194px;
-    overflow: hidden;
+    /* overflow: hidden; */
     border-radius: 10px;
     box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
     background: center/cover no-repeat;
@@ -186,6 +194,12 @@ label {
     background: url(../images/add-fav-icon.svg) center/cover no-repeat;
 }
 
+.funevent-event-card .main-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
 .funevent-event-card .category {
     font-size: 16px;
     font-weight: 700;
@@ -201,6 +215,19 @@ label {
 
 .funevent-event-card .location {
     display: flex;
+    align-items: center;
+    column-gap: 6px;
+}
+
+.funevent-event-card .map-pin-icon {
+    width: 13px;
+    height: 13px;
+    background: url(../images/map-pin-icon--gray.svg) center/cover no-repeat;
+}
+
+.funevent-event-card .location-text {
+    font-size: 14px;
+    color: var(--gray-8);
 }
 
 .funevent-event-card .tag-rating-box {
@@ -218,7 +245,15 @@ label {
     line-height: 1;
 }
 
-.funevent-event-card .date{
+.funevent-event-card .tag.tag--hot {
+    background-color: var(--tag-2);
+}
+
+.funevent-event-card .tag.tag--new {
+    background-color: var(--primary-2);
+}
+
+.funevent-event-card .date {
     font-size: 14px;
     font-weight: 400;
     color: var(--gray-1);
@@ -715,7 +750,7 @@ body {
     /* 占滿整個column(row-line從auto延伸七條line) */
     grid-row: auto / span 7;
     width: 475px;
-    height: 730px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -745,10 +780,26 @@ body {
     padding: 13px 19px;
     border: solid 2px var(--secondary-1);
     border-radius: 10px;
+    appearance: none;
+    background: url(../images/arrow-down-gray.svg) right/cover no-repeat;
+    background-size: 16px 16px;
+    background-position: calc(100% - 15px), 0;
 }
 
 #event-plan-form .radio-box {
     display: flex;
+    column-gap: 6px;
+}
+
+#event-plan-form .radio-box input {
+    display: none;
+}
+
+#event-plan-form .radio-box #time-1:checked~.time-1-label,
+#event-plan-form .radio-box #time-2:checked~.time-2-label {
+    background-color: var(--secondary-1);
+    border: solid 2px var(--gray-2);
+    color: var(--deep);
 }
 
 #event-plan-form .radio-box label {
@@ -1176,4 +1227,17 @@ body {
     background-color: var(--tag-1);
     margin-top: 12px;
     align-self: center;
+}
+
+/* 活動頁-你可能也喜歡區塊 */
+#event-page-recommend {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    margin-bottom: 60px;
+}
+
+#event-page-recommend .funevent-event-list {
+    display: flex;
+    justify-content: space-between;
 }

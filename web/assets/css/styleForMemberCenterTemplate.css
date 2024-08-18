@@ -230,13 +230,13 @@ footer .navigation .download {
 footer .navigation .google {
     width: 142px;
     height: 49px;
-    background-image: url(../assets/images/google-play-icon.svg);
+    background-image: url(../images/google-play-icon.svg);
 }
 
 footer .navigation .iphone {
     width: 146px;
     height: 49px;
-    background-image: url(../assets/images/apple-store-icon.svg);
+    background-image: url(../images/apple-store-icon.svg);
 }
 
 footer .navigation .menu {
@@ -353,7 +353,7 @@ footer .end-box small {
 .member-center-bg-color-block__block2 {
     /* 左中那顆 */
     position: absolute;
-    background: url(../assets/images/member-center-bg-color-block2.svg) center/cover no-repeat;
+    background: url(../images/member-center-bg-color-block2.svg) center/cover no-repeat;
     width: 12.5vw;
     height: 21.8vw;
     transform: translateX(4.72vw) translateY(36.8vw) rotate(42.11deg);
@@ -362,7 +362,7 @@ footer .end-box small {
 .member-center-bg-color-block__block3 {
     /* 右中下那顆 */
     position: absolute;
-    background: url(../assets/images/member-center-bg-color-block3.svg) center/cover no-repeat;
+    background: url(../images/member-center-bg-color-block3.svg) center/cover no-repeat;
     width: 12.5vw;
     height: 21.8vw;
     transform: translateX(67.2vw) translateY(789px) rotate(116.26deg);
@@ -371,7 +371,7 @@ footer .end-box small {
 .member-center-bg-color-block__block4 {
     /* 右邊小小那顆 */
     position: absolute;
-    background: url(../assets/images/member-center-bg-color-block4.svg) center/contain no-repeat;
+    background: url(../images/member-center-bg-color-block4.svg) center/contain no-repeat;
     width: 9.23vw;
     height: 9.23vw;
     transform: translateX(92.37vw) translateY(40.2vw);
@@ -480,7 +480,7 @@ footer .end-box small {
 .member-center-sidebar .member-center-sidebar__menu .member-center-sidebar__list-box .member-center-sidebar__link-box .icon--small {
     width: 24px;
     height: 24px;
-    background-image: url(../assets/images/member-center-sidebar-item-default-icon.svg);
+    background-image: url(../images/member-center-sidebar-item-default-icon.svg);
     margin-right: 12px;
 }
 

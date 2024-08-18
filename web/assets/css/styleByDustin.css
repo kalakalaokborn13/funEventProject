@@ -363,10 +363,14 @@ button {
     box-shadow: 0 0 4.1px 1px rgba(0, 0, 0, 0.5);
 }
 
-/* 背景，之後可能換成圖片 */
+ /* 背景，之後可能換成圖片 */
 body {
     background-image: conic-gradient(from 90deg at 2px 2px, var(--bg-pri) 90deg, var(--bg-line) 0);
     background-size: var(--bg-size) var(--bg-size);
+}
+
+.funevent-wrap {
+    position: relative;
     overflow-x: hidden;
 }
 

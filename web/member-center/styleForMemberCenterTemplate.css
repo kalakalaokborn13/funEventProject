@@ -171,6 +171,10 @@ label {
 body {
     background-image: conic-gradient(from 90deg at 2px 2px, var(--bg-pri) 90deg, var(--bg-line) 0);
     background-size: var(--bg-size) var(--bg-size);
+}
+
+.funevent-wrap {
+    position: relative;
     overflow-x: hidden;
 }
 
@@ -352,15 +356,16 @@ footer .end-box small {
     background: url(../assets/images/member-center-bg-color-block2.svg) center/cover no-repeat;
     width: 12.5vw;
     height: 21.8vw;
-    transform: translateX(4.72vw) translateY(36.8vw) rotate(42.11deg) ;
+    transform: translateX(4.72vw) translateY(36.8vw) rotate(42.11deg);
 }
+
 .member-center-bg-color-block__block3 {
     /* 右中下那顆 */
     position: absolute;
     background: url(../assets/images/member-center-bg-color-block3.svg) center/cover no-repeat;
     width: 12.5vw;
     height: 21.8vw;
-    transform: translateX(67.2vw) translateY(789px) rotate(116.26deg) ;
+    transform: translateX(67.2vw) translateY(789px) rotate(116.26deg);
 }
 
 .member-center-bg-color-block__block4 {

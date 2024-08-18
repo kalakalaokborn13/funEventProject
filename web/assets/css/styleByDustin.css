@@ -8,6 +8,7 @@
     --primary-2: #19B9AA;
     /* 輔助色 */
     --secondary-1: #FFC08C;
+    --secondary-2: #FFBF61;
     /* 背景 */
     --bg-line: #D7E1EC;
     --bg-pri: #F7F9F9;
@@ -24,7 +25,6 @@
     --gray-7: #3E3A39;
     --gray-8: #8A8A8A;
     /* 特殊色 */
-    --tag-1: #FFBF61;
     --tag-2: #FF8282;
 }
 
@@ -203,7 +203,7 @@ button {
 .funevent-event-card .category {
     font-size: 16px;
     font-weight: 700;
-    color: var(--tag-1);
+    color: var(--secondary-2);
 }
 
 .funevent-event-card .event-title {
@@ -322,7 +322,7 @@ button {
 /* tag */
 .tag {
     padding: 5px 10px;
-    background-color: var(--tag-1);
+    background-color: var(--secondary-2);
     color: var(--light);
     border-radius: 20px;
     font-size: 16px;
@@ -942,7 +942,7 @@ body {
 
 #event-main-introduction .funevent-btn {
     width: 50%;
-    background-color: var(--tag-1);
+    background-color: var(--secondary-2);
     align-self: center;
 }
 
@@ -1234,7 +1234,7 @@ body {
 
 #event-page-comment .funevent-btn {
     width: 50%;
-    background-color: var(--tag-1);
+    background-color: var(--secondary-2);
     margin-top: 12px;
     align-self: center;
 }

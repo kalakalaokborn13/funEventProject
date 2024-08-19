@@ -5,10 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>活動趣 FunEvent</title>
+    <link rel="stylesheet" href="./assets/css/styleByDustin.css">
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        /* 為了看到背景，暫時的 */
+        .funevent-wrap {
+            height: 200vh;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="root"></div>
 
+    <script type="text/babel">
+        function App() {
+            return <>
+                {/*為背景設計的wrap，直接讓body{overflow:hidden}在手機板會失效*/}
+                <div className="funevent-wrap">
+                    {/* 導航列 */}
+
+                    <header id="topbar">
+                        <div className="topbar__start-box">
+                            <h1 className="logo">
+                                <a href="../index.html">
+                                    <figure className="logo-en"><img src="../assets/images/logo-en.svg" alt="" /></figure>
+                                    <figure className="logo-tc"><img src="../assets/images/logo-tc.svg" alt="" /></figure>
+                                </a>
+                            </h1>
+                            <div className="topbar__location">
+                                <figure className="topbar__map-pin-icon"><img src="../assets/images/map-pin-icon.svg" alt="地圖圖釘icon" />
+                                </figure>
+                                <p>雙北</p>
+                            </div>
+                        </div>
+                        <div className="topbar__end-box">
+                            <nav className="navigation">
+                                <ul className="topbar-menu">
+                                    <li className="topbar-menu__item">
+                                        <div className="topbar-menu__icon"><img src="../assets/images/search-icon.svg" alt="" /></div>
+                                        <p>找活動</p>
+                                    </li>
+                                    <li className="topbar-menu__item">
+                                        <div className="topbar-menu__icon"><img src="../assets/images/login-icon.svg" alt="" /></div>
+                                        <p>註冊/登入</p>
+                                    </li>
+                                    <li className="topbar-menu__item">
+                                        <div className="topbar-menu__icon"><img src="../assets/images/ticket-icon.svg" alt="" /></div>
+                                        <p>辦活動</p>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </header>
+
+                    {/* 色塊背景 */}
+                    <div className="event-bg-color-block">
+                        <div className="event-bg-color-block__block1"></div>
+                        <div className="event-bg-color-block__block2"></div>
+                    </div>
+                </div>
+            </>
+        }
+
+        ReactDOM
+            .createRoot(document.getElementById("root"))
+            .render(<App />);
+    </script>
 </body>
 
 </html>

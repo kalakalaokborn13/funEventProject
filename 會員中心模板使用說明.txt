@@ -1,0 +1,32 @@
+會員中心模板主要包含兩個檔案： member-center-template.html和styleForMemberCenterTemplate.css
+分別在member-center和assets/css裡面
+
+!!注意!! 如想修改member-center-template.html和styleForMemberCenterTemplate.css裡面的內容請和大家討論後再修改，以免最終樣式不一致
+
+1. 新建會員中心分頁檔案
+使用member-center-template.html時請另存新檔一份並改好檔名和網頁標題(<head>裡面的<title>)
+例如. member-center-account-manage, 會員中心-帳號管理 - 活動趣 FunEvent
+
+2. 重新連結css樣式到自己的css
+建立好新的html之後把css連結到自己的css裡面，
+此時樣式會全部跑掉，必須去styleForMemberCenterTemplate.css裡面複製你需要的樣式，
+例如. 你發現側邊導覽列樣式全沒，
+就去styleForMemberCenterTemplate.css裡面找 /* 會員中心側邊列區 */ ，
+找到後將其複製到你自己的css裡面
+基本上，如果你還沒開始寫任何樣式，全部複製也是可以
+
+3. 撰寫內容
+撰寫時請注意，
+內容要寫在
+<!-- 分頁內容寫在這邊 -->
+<div class="member-center-content">
+    <!-- 請在上面的div加入分頁的class -->
+</div>
+這個div之間
+且在撰寫內容之前 "!!務必!!" 要多加一個class在這個div上以和其他分頁做出區別，
+否則樣式可能會打架
+例如. 我現在要開始寫帳號管理的內容，我就將這個div加一個class，member-center-account-manage
+<!-- 分頁內容寫在這邊 -->
+<div class="member-center-content member-center-account-manage">
+    <!-- 請在上面的div加入分頁的class -->
+</div>

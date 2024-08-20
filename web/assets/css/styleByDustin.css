@@ -474,6 +474,40 @@ body {
     height: 100vh;
 }
 
+/* 活動主題 */
+#home-page-event-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+
+#home-page-event-category .event-category-list {
+    display: flex;
+    column-gap: 33px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 6.5px;
+}
+
+.category-card .category-card-icon {
+    width: 82px;
+    height: 82px;
+    /* background-image: url(../images/event-category-icon.svg); */
+    background: center/cover no-repeat;
+}
+
+.category-card .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--primary-1);
+}
+
+/* 活動推薦總成 */
 .home-page-event-list-box {
     display: flex;
     flex-direction: column;
@@ -481,14 +515,14 @@ body {
     padding: 0 76px;
 }
 
-.home-page-event-list-box-wrap{
+.home-page-event-list-box-wrap {
     width: 100%;
     max-width: 1300px;
     display: flex;
     flex-direction: column;
 }
 
-#home-page-event-card-list-box{
+#home-page-event-card-list-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -501,11 +535,16 @@ body {
     justify-content: space-between;
 }
 
-#home-page-event-card-list-box .event-box{
+
+#home-page-event-card-list-box .event-box {
     width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 25px;
+}
+
+#home-page-event-card-list-box .event-box .funevent-main-title {
+    padding: 0 56px;
 }
 
 /* 活動頁從這開始 */

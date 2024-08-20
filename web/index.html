@@ -11,18 +11,13 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <!-- babel -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <style>
-        /* 為了看到背景，暫時的 */
-        .funevent-wrap {
-            height: 200vh;
-        }
-    </style>
 </head>
 
 <body>
     <div id="root"></div>
 
     <script type="text/babel">
+
         function App() {
             return <>
                 {/*為背景設計的wrap，直接讓body{overflow:hidden}在手機板會失效*/}
@@ -33,12 +28,12 @@
                         <div className="topbar__start-box">
                             <h1 className="logo">
                                 <a href="../index.html">
-                                    <figure className="logo-en"><img src="../assets/images/logo-en.svg" alt="" /></figure>
-                                    <figure className="logo-tc"><img src="../assets/images/logo-tc.svg" alt="" /></figure>
+                                    <figure className="logo-en"><img src="./assets/images/logo-en.svg" alt="" /></figure>
+                                    <figure className="logo-tc"><img src="./assets/images/logo-tc.svg" alt="" /></figure>
                                 </a>
                             </h1>
                             <div className="topbar__location">
-                                <figure className="topbar__map-pin-icon"><img src="../assets/images/map-pin-icon.svg" alt="地圖圖釘icon" />
+                                <figure className="topbar__map-pin-icon"><img src="./assets/images/map-pin-icon.svg" alt="地圖圖釘icon" />
                                 </figure>
                                 <p>雙北</p>
                             </div>
@@ -47,15 +42,15 @@
                             <nav className="navigation">
                                 <ul className="topbar-menu">
                                     <li className="topbar-menu__item">
-                                        <div className="topbar-menu__icon"><img src="../assets/images/search-icon.svg" alt="" /></div>
+                                        <div className="topbar-menu__icon"><img src="./assets/images/search-icon.svg" alt="" /></div>
                                         <p>找活動</p>
                                     </li>
                                     <li className="topbar-menu__item">
-                                        <div className="topbar-menu__icon"><img src="../assets/images/login-icon.svg" alt="" /></div>
+                                        <div className="topbar-menu__icon"><img src="./assets/images/login-icon.svg" alt="" /></div>
                                         <p>註冊/登入</p>
                                     </li>
                                     <li className="topbar-menu__item">
-                                        <div className="topbar-menu__icon"><img src="../assets/images/ticket-icon.svg" alt="" /></div>
+                                        <div className="topbar-menu__icon"><img src="./assets/images/ticket-icon.svg" alt="" /></div>
                                         <p>辦活動</p>
                                     </li>
                                 </ul>
@@ -68,9 +63,96 @@
                         <div className="event-bg-color-block__block1"></div>
                         <div className="event-bg-color-block__block2"></div>
                     </div>
+
+                    <main>
+                        <section id="home-page-first-view">
+
+                        </section>
+                        <section id="home-page-event-category">
+
+                        </section>
+                        <div className="home-page-event-list-box">
+                            <div class="home-page-event-list-box-wrap">
+                                <section id="home-page-topic-list">
+                                </section>
+                                <section id="home-page-event-card-list-box">
+                                    <div className="event-box event-box-hot">
+                                        <h2 className="funevent-main-title">熱門推薦</h2>
+                                        <ul className="event-card-list">
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                        </ul>
+                                    </div>
+                                    <div class="event-box event-box-hits-this-week">
+                                        <h2 className="funevent-main-title">本週精選</h2>
+                                        <ul className="event-card-list">
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                        </ul>
+                                    </div>
+                                    <div class="event-box event-box-new">
+                                        <h2 className="funevent-main-title">最新上架</h2>
+                                        <ul className="event-card-list">
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                            <li><FuneventEventCard tnImgUrl="./assets/images/demo-event-pic/demo-event-pic-01.jpg" /></li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+
+                        </div>
+
+                    </main>
                 </div>
             </>
         }
+
+        // funevent活動卡片元件
+        function FuneventEventCard(props) {
+            {/*所需的props有：tnImgUrl, */ }
+            let tnImgUrl = props.tnImgUrl;
+            let stateTag = <></>;
+
+            return <>
+                <div className="funevent-event-card">
+                    <a href="#" className="event-pic"
+                        style={{ backgroundImage: `url(${tnImgUrl})` }}>
+                        <div className="inner-card">
+                            <div className="start-box">
+                                <div className="tag tag--hot">熱門</div>
+                                <button type="button" className="fav-btn"></button>
+                            </div>
+                            <div className="date">
+                                <p>2024.08.11(六) 10:00</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div className="main-content">
+                        <p className="category">戶外運動</p>
+                        <h2 className="event-title">【夏日營隊】戶外平衡競走大挑戰，四大主題等你來挑戰！</h2>
+                        <div className="location">
+                            <div className="map-pin-icon"></div>
+                            <p className="location-text">新北 · 板橋區</p>
+                        </div>
+                    </div>
+                    <div className="tag-rating-box">
+                        <ul className="tag-list">
+                            <li className="tag">#競賽</li>
+                            <li className="tag">#團體合作</li>
+                        </ul>
+                        <p className="rating-score">4.5(151)</p>
+                    </div>
+                    <button className="funevent-btn sign-up-btn" type="button">我要報名</button>
+                </div>
+            </>
+        }
+
 
         ReactDOM
             .createRoot(document.getElementById("root"))

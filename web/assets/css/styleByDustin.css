@@ -363,7 +363,7 @@ button {
     box-shadow: 0 0 4.1px 1px rgba(0, 0, 0, 0.5);
 }
 
- /* 背景，之後可能換成圖片 */
+/* 背景，之後可能換成圖片 */
 body {
     background-image: conic-gradient(from 90deg at 2px 2px, var(--bg-pri) 90deg, var(--bg-line) 0);
     background-size: var(--bg-size) var(--bg-size);
@@ -468,6 +468,44 @@ body {
     position: absolute;
     right: -11.6vw;
     top: 12.8vw;
+}
+
+#home-page-first-view {
+    height: 100vh;
+}
+
+.home-page-event-list-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 76px;
+}
+
+.home-page-event-list-box-wrap{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+}
+
+#home-page-event-card-list-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    row-gap: 40px;
+}
+
+#home-page-event-card-list-box .event-card-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+#home-page-event-card-list-box .event-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
 }
 
 /* 活動頁從這開始 */

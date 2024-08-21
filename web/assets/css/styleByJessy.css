@@ -508,9 +508,16 @@ footer .end-box small {
     border-bottom: dashed 0.5px #19B9AA;
 
 }
-.hosting-center-content .box{
+
+.hosting-center-content .box .split-line-row{
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
+    border-bottom: dashed 0.5px #19B9AA;
+}
+.hosting-center-content .part{
+    padding: 5px 0;
+    justify-content: space-between;
 }
 
 .hosting-center-content .hosting .title{
@@ -534,19 +541,26 @@ footer .end-box small {
 .hosting-center-content .add-account img{
     width: 39px;
     height: 39px;
+    border-radius: 16px;
+    
 }
 .member-center-message-manage .message img{
     width: 81px;
     height: 81px;
 }
+.member-center-message-manage .decoration img{
+    width: 16px;
+    height: 9px;
+}
+.member-center-message-manage .message img{
+    width: 269px;
+    height: 42px;
+}
 .member-center-message-manage .message .title{
     font-size: 24px;
     font-weight: 700;
 }
-.member-center-message-manage .message .box{
-    
-}
 .member-center-message-manage .subtitle{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
 }

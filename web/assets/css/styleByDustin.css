@@ -376,6 +376,7 @@ body {
 
 /* 置頂導航列 topbar */
 #topbar {
+    position: absolute;
     display: flex;
     justify-content: space-between;
     /* position: fixed; */
@@ -383,7 +384,7 @@ body {
 }
 
 .topbar__start-box {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     align-items: center;
 }
@@ -408,7 +409,7 @@ body {
 }
 
 .topbar__end-box {
-    position: fixed;
+    /* position: fixed; */
     right: 0;
 }
 
@@ -818,14 +819,22 @@ footer .end-box small {
 
 /* 活動頁-大輪播 */
 .event-intro-carousel .slide-box {
+    position: relative;
     height: 100%;
 }
 
-.event-intro-carousel figure {
+.event-intro-carousel .slide {
+    position: absolute;
+    opacity: 0;
     width: 100%;
     height: 100%;
     border-radius: 10px;
     overflow: hidden;
+    transition: .35s;
+}
+
+.event-intro-carousel .slide.active {
+    opacity: 1;
 }
 
 .event-intro-carousel figure img {
@@ -869,7 +878,7 @@ footer .end-box small {
     margin-right: 14px;
 }
 
-.event-intro-carousel__ctrl-box .ctrl-btn.ctrl-btn--active {
+.event-intro-carousel__ctrl-box .ctrl-btn.active {
     background-color: var(--gray-1);
 }
 
@@ -1037,6 +1046,7 @@ footer .end-box small {
 
 /* 活動頁-方案漂浮板面 */
 .event-plan-board {
+    position: relative;
     /* 占滿整個column(row-line從auto延伸七條line) */
     grid-row: auto / span 7;
     /* width: 475px; */
@@ -1178,10 +1188,15 @@ footer .end-box small {
 }
 
 /* 活動頁-內部導航列 */
+.event-inner-nav {
+    position: relative;
+    z-index: 1;
+}
+
 .event-inner-nav .menu {
     display: flex;
     justify-content: space-between;
-    column-gap: 0.6px;
+    /* column-gap: 0.6px; */
 }
 
 .event-inner-nav .item {
@@ -1200,9 +1215,10 @@ footer .end-box small {
     font-size: 20px;
     font-weight: 700;
     color: var(--light);
+    transition: .35s;
 }
 
-.event-inner-nav__btn.is-enhanced {
+.event-inner-nav__btn.active {
     background-color: var(--primary-1);
 }
 

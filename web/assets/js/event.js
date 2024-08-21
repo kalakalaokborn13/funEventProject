@@ -1,3 +1,5 @@
+// TODO
+// 元素會跟不上捲動
 /* 頁首輪播 */
 let slideEleArr = Array.from(document.querySelector(".event-intro-carousel").querySelectorAll(".slide"));
 let ctrlBtnEleArr = Array.from(document.querySelector(".event-intro-carousel__ctrl-box").querySelectorAll(".ctrl-btn"));
@@ -109,11 +111,12 @@ let planBoardOriginTop = $(".event-plan-board").offset().top;
 // console.log(planBoardOriginTop);
 console.log();
 
-let planBoardGap = 30;
+let planBoardGap = 15;
 $(window).scroll(function (ev) {
     // 移動超過方案面板一開始的位置後
     if ($(this).scrollTop() + planBoardGap > planBoardOriginTop) {
         // 移動
+        // $(".event-plan-board").css("position", "sticky");
         $(".event-plan-board").css('top', $(this).scrollTop() - planBoardOriginTop + planBoardGap);
     } else {
         $(".event-plan-board").css('top', 0);

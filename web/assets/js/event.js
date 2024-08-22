@@ -124,7 +124,7 @@ let planBoardEndBot = $(".event-introduction-container").offset().top + $(".even
 let planBoardGap = 15;
 $(window).scroll(function (ev) {
     // 移動超過方案面板一開始的位置後
-    if ($(this).scrollTop() + planBoardGap > planBoardOriginTop && $(this).scrollTop() < planBoardEndBot - $(".event-plan-board").outerHeight() + planBoardGap) {
+    if ($(this).scrollTop() + planBoardGap > planBoardOriginTop && $(this).scrollTop() < planBoardEndBot - $(".event-plan-board").outerHeight() - planBoardGap) {
         // 移動
         // $(".event-plan-board").css("position", "sticky");
         $(".event-plan-board").css('top', $(this).scrollTop() - planBoardOriginTop + planBoardGap);

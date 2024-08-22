@@ -211,6 +211,13 @@ button {
     font-weight: 700;
     line-height: 30px;
     color: var(--gray-5);
+    /* 多行省略 */
+    overflow: hidden;  
+    text-overflow: ellipsis; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical; 
 }
 
 .funevent-event-card .location {
@@ -360,7 +367,7 @@ button {
 #event-page-plan-intro .plan-item,
 #event-page-founder,
 .funevent-event-card {
-    box-shadow: 0 0 4.1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* 背景，之後可能換成圖片 */
@@ -1218,6 +1225,13 @@ footer .end-box small {
     display: flex;
     justify-content: center;
     flex-grow: 1;
+}
+
+.event-inner-nav .item:first-child .event-inner-nav__btn{
+    box-shadow: -1px 0 2px 1px rgba(0, 0, 0, 0.3);
+}
+.event-inner-nav .item:last-child .event-inner-nav__btn{
+    box-shadow: 1px 0 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 .event-inner-nav__btn {

@@ -501,6 +501,10 @@ footer .end-box small {
 }
 
 /* 會員中心-主辦中心頁面 */
+.hosting-center-content{
+    padding: 50px;
+}
+
 .hosting-center-content .hosting .split-line-row{
     background-color: transparent;
     height: 0;
@@ -508,7 +512,10 @@ footer .end-box small {
     border-bottom: dashed 0.5px #19B9AA;
 
 }
-
+.hosting-center-content .hosting .start-box{
+    display: flex;
+    align-items: center;
+}
 .hosting-center-content .box .split-line-row{
     display: flex;
     flex-direction: column;
@@ -523,26 +530,36 @@ footer .end-box small {
 .hosting-center-content .hosting .title{
     font-size: 24px;
     font-weight: 700;
+    margin-bottom: 28px;
 }
 .hosting-center-content .hosting .subtitle{
     font-size: 20px;
     font-weight: 500;
 }
-.hosting-center-content .hosting img{
+.hosting-center-content .hosting .first-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    align-items: center;
+}
+.hosting-center-content .hosting .circle {
     width: 81px;
     height: 81px;
+    margin-right: 17px;
 }
 .hosting-center-content .add-account{
     display: flex;  
     font-size: 20px;
     font-weight: 700;
-    color: #898989
+    color: #898989;
+    margin-top: 16px;
+    align-items: center;
 }
 .hosting-center-content .add-account img{
     width: 39px;
     height: 39px;
     border-radius: 16px;
-    
+    margin-right: 17px;
 }
 .member-center-message-manage .message img{
     width: 81px;

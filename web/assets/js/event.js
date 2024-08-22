@@ -1,4 +1,9 @@
-/* 頁首輪播 */
+// TODO
+// 價錢計算
+// 內部導航按鈕變色
+// fix: 元素會跟不上捲動
+
+/* 活動照輪播 */
 let slideEleArr = Array.from(document.querySelector(".event-intro-carousel").querySelectorAll(".slide"));
 let ctrlBtnEleArr = Array.from(document.querySelector(".event-intro-carousel__ctrl-box").querySelectorAll(".ctrl-btn"));
 let goPrevBtnEle = document.querySelector("#caro-prev-btn");
@@ -72,8 +77,7 @@ $(window).scroll(function (ev) {
     let eventInnerNav = $(".event-inner-nav");
     let navBtns = $(".event-inner-nav .event-inner-nav__btn")
 
-    // console.log($(this).scrollTop());
-    // console.log(eventInnerNav.position().top);
+
     // 移動超過內部導覽列一開始的位置後
     if ($(this).scrollTop() > innerNavOriginTop) {
         // 移動
@@ -89,6 +93,9 @@ $(window).scroll(function (ev) {
             btn.style.borderRadius = "20px 20px 0 0";
         });
     }
+    // console.log("window:" + $(this).scrollTop());
+    // console.log("inner-nav:" + eventInnerNav.position().top);
+    // console.log("diff:" + ($(this).scrollTop() - eventInnerNav.position().top));
     // 介於特定位置時按鈕變色
 
 
@@ -100,22 +107,33 @@ $(".event-inner-nav__btn").each((index, btn) => {
     btn.addEventListener("click", function () {
         $("html, body").animate({
             scrollTop: targetPos.top - $(".event-inner-nav").height()
-        }, 500);
+        }, 100, "linear");
     });
 });
 
 /* 活動方案懸浮面板 */
+// 面板一開始的位置
 let planBoardOriginTop = $(".event-plan-board").offset().top;
-// console.log(planBoardOriginTop);
-console.log();
+// row-gap
+let rowGap = 25;
+// 面板終點的底部位置
+let planBoardEndBot = $(".event-introduction-container").offset().top + $(".event-introduction-container").height() - rowGap;
+// console.log(planBoardEndBot);
 
-let planBoardGap = 30;
+// 面板與最上的間隙
+let planBoardGap = 15;
 $(window).scroll(function (ev) {
     // 移動超過方案面板一開始的位置後
-    if ($(this).scrollTop() + planBoardGap > planBoardOriginTop) {
+    if ($(this).scrollTop() + planBoardGap > planBoardOriginTop && $(this).scrollTop() < planBoardEndBot - $(".event-plan-board").outerHeight() + planBoardGap) {
         // 移動
+        // $(".event-plan-board").css("position", "sticky");
         $(".event-plan-board").css('top', $(this).scrollTop() - planBoardOriginTop + planBoardGap);
-    } else {
+    } else if ($(this).scrollTop() + planBoardGap < planBoardOriginTop) {
         $(".event-plan-board").css('top', 0);
+    } else if ($(this).scrollTop() > planBoardEndBot - $(".event-plan-board").outerHeight() + planBoardGap) {
+        // console.log($(".event-plan-board").height());
+        $(".event-plan-board").css('top', planBoardEndBot - $(".event-plan-board").outerHeight() - planBoardOriginTop);
     }
 })
+
+/* 活動金額計算 */

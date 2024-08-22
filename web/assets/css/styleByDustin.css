@@ -209,7 +209,7 @@ button {
 .funevent-event-card .event-title {
     font-size: 20px;
     font-weight: 700;
-    line-height: 26px;
+    line-height: 30px;
     color: var(--gray-5);
 }
 
@@ -588,8 +588,20 @@ footer .end-box small {
     top: 12.8vw;
 }
 
+/* 首頁第一面 */
 #home-page-first-view {
     height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-right: 36px;
+}
+
+#home-page-first-view .logo-area {
+    width: 50%;
+}
+
+#home-page-first-view .carousel-area {
+    width: 50%;
 }
 
 /* 分類小卡列表 */
@@ -992,7 +1004,7 @@ footer .end-box small {
 
 .event-intro-card__content .add-calendar,
 .event-intro-card__content .open-map {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--primary-1);
 }
@@ -1014,9 +1026,12 @@ footer .end-box small {
 }
 
 .event-intro-card__content .open-link-icon {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     background-image: url(../images/open-link-icon.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .event-intro-card .split-line-row {
